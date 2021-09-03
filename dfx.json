@@ -1,0 +1,23 @@
+{
+  "canisters": {
+    "rust_hello": {
+      "build": "cargo build --target wasm32-unknown-unknown --package rust_hello --release",
+      "wasm": "target/wasm32-unknown-unknown/release/rust_hello.wasm",
+      "type": "custom",
+      "candid": "src/rust_hello/src/rust_hello.did"
+    },
+    "rust_reply": {
+        "build": "cargo build --target wasm32-unknown-unknown --package rust_reply --release",
+        "wasm": "target/wasm32-unknown-unknown/release/rust_reply.wasm",
+        "type": "custom",
+        "candid": "src/rust_reply/src/rust_reply.did"
+      }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
